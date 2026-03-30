@@ -1,7 +1,7 @@
 /* =========================================================
    SABERES POLITÉCNICOS — Main Script
    Single-page navigation, content loading, search, filters,
-   theme toggle, modal, form handling
+   theme toggle, modal, form handling, portal institucional
    ========================================================= */
 
 (function () {
@@ -43,7 +43,6 @@
   }
 
   // ---- MOBILE NAV ----
-  // Create overlay
   const navOverlay = document.createElement('div');
   navOverlay.id = 'nav-overlay';
   document.body.appendChild(navOverlay);
@@ -51,6 +50,8 @@
   mobileMenuBtn && mobileMenuBtn.addEventListener('click', () => {
     const isOpen = mainNav.classList.toggle('open');
     navOverlay.classList.toggle('open', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
+    mobileMenuBtn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
     mobileMenuBtn.setAttribute('aria-expanded', isOpen);
     mobileMenuBtn.innerHTML = isOpen
       ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
@@ -62,6 +63,8 @@
   function closeMenu() {
     mainNav.classList.remove('open');
     navOverlay.classList.remove('open');
+    document.body.classList.remove('nav-open');
+    mobileMenuBtn && mobileMenuBtn.setAttribute('aria-label', 'Abrir menú');
     mobileMenuBtn && mobileMenuBtn.setAttribute('aria-expanded', 'false');
     mobileMenuBtn && (mobileMenuBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>');
   }
@@ -90,6 +93,11 @@
     // Scroll to top
     window.scrollTo({ top: 0, behavior: 'instant' });
     closeMenu();
+
+    // Reset portal if navigating to portal
+    if (id === 'portal') {
+      resetPortalView();
+    }
   }
 
   window.addEventListener('hashchange', () => showSection(getHash()));
@@ -98,11 +106,27 @@
   navLinks.forEach(l => {
     l.addEventListener('click', (e) => {
       const target = l.dataset.section;
-      if (target) {
-        e.preventDefault();
-        location.hash = target;
+      if (!target) return;
+      e.preventDefault();
+      closeMenu();
+      if (target === getHash()) {
+        showSection(target);
+        return;
       }
+      location.hash = target;
     });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMenu();
+    }
   });
 
   // Handle internal links in content
@@ -135,6 +159,7 @@
       renderRepository();
       renderComite();
       buildFilterChips();
+      initAdminPanel();
     } catch (err) {
       console.error('Error loading data:', err);
     }
@@ -263,7 +288,6 @@
 
   // ---- FILTER CHIPS ----
   function buildFilterChips() {
-    // Articles
     const artFilters = document.getElementById('articles-filters');
     if (artFilters) {
       const programs = [...new Set(articles.map(a => a.programa))];
@@ -276,7 +300,6 @@
       });
     }
 
-    // Repo
     const repoFilters = document.getElementById('repo-filters');
     if (repoFilters) {
       const programs = [...new Set(repository.map(r => r.programa))];
@@ -311,7 +334,6 @@
     }
   });
 
-  // Search inputs
   const artSearch = document.getElementById('articles-search');
   const repoSearch = document.getElementById('repo-search');
 
@@ -393,7 +415,7 @@
     if (e.key === 'Escape') closeModal();
   });
 
-  // ---- FORM TABS ----
+  // ---- FORM TABS (Envíos) ----
   document.querySelectorAll('.form-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       document.querySelectorAll('.form-tab').forEach(t => {
@@ -411,33 +433,35 @@
     });
   });
 
-  // ---- FORM SUBMIT ----
+  // ---- FORM SUBMIT (existing) ----
   document.querySelectorAll('.submission-form, .contact-form').forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-
-      // Basic validation
-      const requiredFields = form.querySelectorAll('[required]');
-      let valid = true;
-      requiredFields.forEach(f => {
-        if (!f.value.trim() && f.type !== 'checkbox') {
-          f.style.borderColor = 'var(--color-error)';
-          valid = false;
-        } else if (f.type === 'checkbox' && !f.checked) {
-          valid = false;
-        } else {
-          f.style.borderColor = '';
-        }
-      });
-
-      if (valid) {
+      if (validateForm(form)) {
         showToast('Formulario enviado correctamente (demo). Para envíos reales, use el correo electrónico indicado.');
         form.reset();
-      } else {
-        showToast('Por favor, complete todos los campos obligatorios.');
       }
     });
   });
+
+  function validateForm(form) {
+    const requiredFields = form.querySelectorAll('[required]');
+    let valid = true;
+    requiredFields.forEach(f => {
+      if (!f.value.trim() && f.type !== 'checkbox') {
+        f.style.borderColor = 'var(--color-error)';
+        valid = false;
+      } else if (f.type === 'checkbox' && !f.checked) {
+        valid = false;
+      } else {
+        f.style.borderColor = '';
+      }
+    });
+    if (!valid) {
+      showToast('Por favor, complete todos los campos obligatorios.');
+    }
+    return valid;
+  }
 
   // ---- TOAST ----
   function showToast(msg) {
@@ -465,11 +489,299 @@
       });
     }, { threshold: 0.1 });
 
-    // Observe after content loads
     setTimeout(() => {
       document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
     }, 300);
   }
+
+  // =========================================================
+  //  PORTAL INSTITUCIONAL
+  // =========================================================
+
+  // ---- Portal card navigation ----
+  const portalCards = document.getElementById('portal-cards');
+  const panelIds = { admin: 'panel-admin', evaluador: 'panel-evaluador', estudiante: 'panel-estudiante', publico: 'panel-publico' };
+
+  function resetPortalView() {
+    // Show cards, hide all panels
+    if (portalCards) portalCards.hidden = false;
+    Object.values(panelIds).forEach(id => {
+      const panel = document.getElementById(id);
+      if (panel) { panel.hidden = true; panel.setAttribute('hidden', ''); }
+    });
+  }
+
+  function showPortalPanel(role) {
+    if (portalCards) { portalCards.hidden = true; portalCards.setAttribute('hidden', ''); }
+    Object.values(panelIds).forEach(id => {
+      const panel = document.getElementById(id);
+      if (panel) {
+        const show = id === panelIds[role];
+        panel.hidden = !show;
+        if (show) panel.removeAttribute('hidden');
+        else panel.setAttribute('hidden', '');
+      }
+    });
+    window.scrollTo({ top: document.getElementById('portal').offsetTop - 80, behavior: 'smooth' });
+  }
+
+  // Card clicks
+  document.querySelectorAll('[data-portal]').forEach(card => {
+    card.addEventListener('click', () => showPortalPanel(card.dataset.portal));
+  });
+
+  // Back buttons
+  document.querySelectorAll('[data-back]').forEach(btn => {
+    btn.addEventListener('click', () => resetPortalView());
+  });
+
+  // ---- Admin Tabs ----
+  document.querySelectorAll('.admin-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelectorAll('.admin-panel-content').forEach(c => {
+        const show = c.id === tab.dataset.admintab;
+        c.hidden = !show;
+        if (show) c.removeAttribute('hidden');
+        else c.setAttribute('hidden', '');
+      });
+    });
+  });
+
+  // ---- Evaluador Tabs ----
+  document.querySelectorAll('.eval-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.eval-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelectorAll('.eval-content').forEach(c => {
+        const show = c.id === tab.dataset.evaltab;
+        c.hidden = !show;
+        if (show) c.removeAttribute('hidden');
+        else c.setAttribute('hidden', '');
+      });
+    });
+  });
+
+  // ---- Estudiante Tabs ----
+  document.querySelectorAll('.est-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.est-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelectorAll('.est-content').forEach(c => {
+        const show = c.id === tab.dataset.esttab;
+        c.hidden = !show;
+        if (show) c.removeAttribute('hidden');
+        else c.setAttribute('hidden', '');
+      });
+    });
+  });
+
+  // ---- Admin Panel Init ----
+  function initAdminPanel() {
+    // Stats
+    const statArts = document.getElementById('stat-arts');
+    const statRepos = document.getElementById('stat-repos');
+    const statProgs = document.getElementById('stat-progs');
+    if (statArts) statArts.textContent = articles.length;
+    if (statRepos) statRepos.textContent = repository.length;
+    if (statProgs) {
+      const allProgs = new Set([...articles.map(a => a.programa), ...repository.map(r => r.programa)]);
+      statProgs.textContent = allProgs.size;
+    }
+
+    // Articles table
+    const tbody = document.getElementById('adm-articles-tbody');
+    if (tbody) {
+      tbody.innerHTML = articles.map(a => `
+        <tr>
+          <td>${escHTML(a.titulo)}</td>
+          <td>${escHTML(a.autores.join('; '))}</td>
+          <td>${escHTML(a.programa)}</td>
+          <td><span class="status-badge status--aprobado">${escHTML(a.estado)}</span></td>
+        </tr>
+      `).join('');
+    }
+
+    // Comité editable
+    renderAdminComite();
+  }
+
+  function renderAdminComite() {
+    const list = document.getElementById('adm-comite-list');
+    if (!list || !siteData.comite_editorial) return;
+
+    list.innerHTML = siteData.comite_editorial.map((m, i) => `
+      <div class="admin-comite-item" data-index="${i}">
+        <div class="form-group"><label>Cargo</label><input type="text" value="${escHTML(m.cargo)}" data-field="cargo"></div>
+        <div class="form-group"><label>Nombre</label><input type="text" value="${escHTML(m.nombre)}" data-field="nombre"></div>
+        <div class="form-group"><label>Afiliación</label><input type="text" value="${escHTML(m.afiliacion)}" data-field="afiliacion"></div>
+        <button class="btn-remove" data-remove="${i}">&times; Quitar</button>
+      </div>
+    `).join('');
+
+    // Remove handlers
+    list.querySelectorAll('[data-remove]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.dataset.remove);
+        siteData.comite_editorial.splice(idx, 1);
+        renderAdminComite();
+      });
+    });
+
+    // Live edit
+    list.querySelectorAll('input[data-field]').forEach(input => {
+      input.addEventListener('input', () => {
+        const item = input.closest('.admin-comite-item');
+        const idx = parseInt(item.dataset.index);
+        const field = input.dataset.field;
+        if (siteData.comite_editorial[idx]) {
+          siteData.comite_editorial[idx][field] = input.value;
+        }
+      });
+    });
+  }
+
+  // Add comité member
+  const addComiteBtn = document.getElementById('adm-add-comite');
+  addComiteBtn && addComiteBtn.addEventListener('click', () => {
+    siteData.comite_editorial.push({ cargo: 'Nuevo cargo', nombre: '[Nombre]', afiliacion: 'UPTA' });
+    renderAdminComite();
+  });
+
+  // ---- Admin Export JSON ----
+  const admExport = document.getElementById('adm-export');
+  admExport && admExport.addEventListener('click', () => {
+    const config = {
+      nombre_revista: document.getElementById('adm-nombre')?.value || '',
+      subtitulo: document.getElementById('adm-subtitulo')?.value || '',
+      institucion: document.getElementById('adm-institucion')?.value || '',
+      correo_contacto: document.getElementById('adm-correo')?.value || '',
+      deposito_legal: document.getElementById('adm-deposito')?.value || '',
+      issn: document.getElementById('adm-issn')?.value || '',
+      volumen_actual: document.getElementById('adm-volumen')?.value || '',
+      numero_actual: document.getElementById('adm-numero')?.value || '',
+      descripcion: document.getElementById('adm-descripcion')?.value || '',
+      mision: document.getElementById('adm-mision')?.value || '',
+      vision: document.getElementById('adm-vision')?.value || '',
+      comite_editorial: siteData.comite_editorial || [],
+      convocatoria: {
+        texto: document.getElementById('adm-convocatoria')?.value || '',
+        fecha_limite: document.getElementById('adm-fecha-limite')?.value || '',
+        estado: document.getElementById('adm-conv-estado')?.value || ''
+      }
+    };
+    downloadJSON(config, 'site-config.json');
+    showToast('Configuración exportada como site-config.json');
+  });
+
+  const admExportArticles = document.getElementById('adm-export-articles');
+  admExportArticles && admExportArticles.addEventListener('click', () => {
+    downloadJSON(articles, 'articles.json');
+    showToast('Artículos exportados como articles.json');
+  });
+
+  function downloadJSON(data, filename) {
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  // ---- Portal Forms ----
+  const portalForms = document.querySelectorAll('.portal-form');
+  portalForms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (validateForm(form)) {
+        const formName = form.id;
+        if (formName === 'form-evaluador') {
+          showToast('Registro de evaluador completado (demo). En producción, los datos serían enviados al comité editorial.');
+        } else if (formName === 'form-estudiante') {
+          showToast('Registro de estudiante completado (demo). En producción, recibirá confirmación por correo.');
+        } else if (formName === 'form-publico') {
+          showToast('Suscripción registrada (demo). En producción, recibirá las ediciones en su correo.');
+        } else if (formName === 'form-est-envio') {
+          showToast('Trabajo enviado correctamente (demo). En producción, el comité editorial lo procesará.');
+        } else {
+          showToast('Formulario enviado correctamente (demo).');
+        }
+        form.reset();
+      }
+    });
+  });
+
+  // ---- Student: New submission toggle ----
+  const estNuevoEnvio = document.getElementById('est-nuevo-envio');
+  const estEnvioWrapper = document.getElementById('est-envio-form-wrapper');
+  estNuevoEnvio && estNuevoEnvio.addEventListener('click', () => {
+    if (estEnvioWrapper) {
+      const isHidden = estEnvioWrapper.hidden;
+      estEnvioWrapper.hidden = !isHidden;
+      if (isHidden) estEnvioWrapper.removeAttribute('hidden');
+      else estEnvioWrapper.setAttribute('hidden', '');
+    }
+  });
+
+  // ---- Evaluador: Dictamen modal ----
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-eval-action="dictamen"]');
+    if (!btn) return;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'dictamen-overlay';
+    overlay.innerHTML = `
+      <div class="dictamen-modal">
+        <button class="dictamen-close" aria-label="Cerrar">&times;</button>
+        <h3>Emitir dictamen</h3>
+        <form class="portal-form" id="form-dictamen" novalidate>
+          <div class="form-group">
+            <label for="dict-veredicto">Veredicto *</label>
+            <select id="dict-veredicto" required>
+              <option value="">Seleccione</option>
+              <option>Aprobado sin correcciones</option>
+              <option>Aprobado con correcciones menores</option>
+              <option>Requiere correcciones mayores</option>
+              <option>Rechazado</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="dict-obs">Observaciones *</label>
+            <textarea id="dict-obs" rows="5" required placeholder="Detalle sus observaciones sobre el trabajo evaluado"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="dict-archivo">Dictamen adjunto (opcional)</label>
+            <input type="file" id="dict-archivo" accept=".pdf,.docx,.odt">
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit">Enviar dictamen</button>
+        </form>
+      </div>
+    `;
+
+    document.body.appendChild(overlay);
+    document.body.style.overflow = 'hidden';
+
+    const closeDictamen = () => {
+      overlay.remove();
+      document.body.style.overflow = '';
+    };
+
+    overlay.querySelector('.dictamen-close').addEventListener('click', closeDictamen);
+    overlay.addEventListener('click', (ev) => {
+      if (ev.target === overlay) closeDictamen();
+    });
+
+    overlay.querySelector('#form-dictamen').addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      showToast('Dictamen enviado correctamente (demo).');
+      closeDictamen();
+    });
+  });
 
   // ---- UTILITIES ----
   function escHTML(str) {

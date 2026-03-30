@@ -51,6 +51,7 @@
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a href="#inicio" class="logo-link" aria-label="Saberes Politécnicos — Inicio">
+        <img src="./assets/logo-upt.jpg" alt="Logo UPT" class="header-logo-img">
         <svg class="logo-svg" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <!-- Book/pages icon -->
           <rect x="2" y="6" width="22" height="28" rx="2" stroke="currentColor" stroke-width="1.8" fill="none"/>
@@ -76,6 +77,7 @@
           <li><a href="#normas" class="nav-link" data-section="normas">Normas</a></li>
           <li><a href="#envios" class="nav-link" data-section="envios">Envíos</a></li>
           <li><a href="#comite" class="nav-link" data-section="comite">Comité</a></li>
+          <li><a href="#portal" class="nav-link" data-section="portal">Portal</a></li>
           <li><a href="#contacto" class="nav-link" data-section="contacto">Contacto</a></li>
         </ul>
       </nav>
@@ -97,6 +99,19 @@
     <!-- =================== INICIO =================== -->
     <section class="page-section" id="inicio" data-page="inicio">
 
+      <!-- Institutional strip -->
+      <div class="institutional-strip">
+        <div class="container">
+          <div class="institutional-inner">
+            <img src="./assets/logo-upt.jpg" alt="Logo Universidad Politécnica Territorial del Estado Aragua" class="institutional-logo">
+            <div class="institutional-text">
+              <span class="institutional-name">Universidad Politécnica Territorial del Estado Aragua</span>
+              <span class="institutional-sub">Federico Brito Figueroa &middot; Aragua, Venezuela</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Hero -->
       <div class="hero">
         <div class="hero-inner">
@@ -106,6 +121,7 @@
           <div class="hero-actions">
             <a href="#articulos" class="btn btn-primary">Explorar artículos</a>
             <a href="#repositorio" class="btn btn-secondary">Repositorio de proyectos</a>
+            <a href="#portal" class="btn btn-accent">Portal institucional</a>
           </div>
           <p class="hero-legal">Depósito Legal: AR2026000105 · ISSN: en trámite</p>
         </div>
@@ -660,6 +676,245 @@
       </div>
     </section>
 
+    <!-- =================== PORTAL INSTITUCIONAL =================== -->
+    <section class="page-section" id="portal" data-page="portal" hidden>
+      <div class="container">
+        <div class="page-header">
+          <h1>Portal institucional</h1>
+          <p>Acceda al sistema según su perfil. Seleccione su rol para registrarse, gestionar contenido o suscribirse a la revista.</p>
+        </div>
+
+        <!-- Profile cards -->
+        <div class="portal-cards" id="portal-cards">
+          <button class="portal-card portal-card--admin" data-portal="admin">
+            <div class="portal-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3>Administrador</h3>
+            <p>Panel de gestión editorial, configuración y exportación de datos.</p>
+          </button>
+          <button class="portal-card portal-card--evaluador" data-portal="evaluador">
+            <div class="portal-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3>Evaluador</h3>
+            <p>Registro de árbitros y panel de evaluación de trabajos científicos.</p>
+          </button>
+          <button class="portal-card portal-card--estudiante" data-portal="estudiante">
+            <div class="portal-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/><path d="M12 14l9-5-9-5-9 5 9 5zm0 0v6.5"/></svg>
+            </div>
+            <h3>Estudiantes</h3>
+            <p>Registro de pregrado y postgrado, envío de artículos y seguimiento.</p>
+          </button>
+          <button class="portal-card portal-card--publico" data-portal="publico">
+            <div class="portal-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <h3>Público general</h3>
+            <p>Suscripción por correo para recibir ediciones y avisos.</p>
+          </button>
+        </div>
+
+        <!-- ===== PANEL: ADMINISTRADOR ===== -->
+        <div class="portal-panel" id="panel-admin" hidden>
+          <div class="panel-header">
+            <button class="panel-back" data-back aria-label="Volver a perfiles">&larr; Volver</button>
+            <h2>Panel de administración</h2>
+            <p>Gestione la configuración de la revista, comité editorial, artículos y convocatorias. Los cambios se pueden exportar como JSON.</p>
+          </div>
+
+          <div class="admin-tabs" role="tablist">
+            <button class="admin-tab active" role="tab" data-admintab="admin-general">General</button>
+            <button class="admin-tab" role="tab" data-admintab="admin-comite">Comité</button>
+            <button class="admin-tab" role="tab" data-admintab="admin-articulos">Artículos</button>
+            <button class="admin-tab" role="tab" data-admintab="admin-convocatorias">Convocatorias</button>
+          </div>
+
+          <!-- General -->
+          <div class="admin-panel-content" id="admin-general">
+            <div class="admin-form-grid">
+              <div class="form-group"><label>Nombre de la revista</label><input type="text" id="adm-nombre" value="Saberes Politécnicos"></div>
+              <div class="form-group"><label>Subtítulo</label><input type="text" id="adm-subtitulo" value="Revista Científica Digital"></div>
+              <div class="form-group"><label>Institución</label><input type="text" id="adm-institucion" value="Universidad Politécnica Territorial del Estado Aragua (UPTA)"></div>
+              <div class="form-group"><label>Correo de contacto</label><input type="email" id="adm-correo" value="" placeholder="correo@upta.edu.ve"></div>
+              <div class="form-group"><label>Depósito Legal</label><input type="text" id="adm-deposito" value="AR2026000105"></div>
+              <div class="form-group"><label>ISSN</label><input type="text" id="adm-issn" value="En trámite"></div>
+              <div class="form-group"><label>Volumen actual</label><input type="number" id="adm-volumen" value="1"></div>
+              <div class="form-group"><label>Número actual</label><input type="number" id="adm-numero" value="1"></div>
+              <div class="form-group form-group--full"><label>Descripción</label><textarea id="adm-descripcion" rows="3">Saberes Politécnicos es una revista científica digital de acceso abierto, orientada a la divulgación de artículos de investigación y proyectos de grado del ámbito politécnico.</textarea></div>
+              <div class="form-group form-group--full"><label>Misión</label><textarea id="adm-mision" rows="2">Fomentar la producción y difusión del conocimiento científico y tecnológico generado en el entorno académico politécnico.</textarea></div>
+              <div class="form-group form-group--full"><label>Visión</label><textarea id="adm-vision" rows="2">Ser un referente editorial digital en el ámbito de las universidades politécnicas territoriales de Venezuela.</textarea></div>
+            </div>
+          </div>
+
+          <!-- Comité -->
+          <div class="admin-panel-content" id="admin-comite" hidden>
+            <div id="adm-comite-list" class="admin-comite-list"></div>
+            <button class="btn btn-secondary btn-sm" id="adm-add-comite">+ Agregar miembro</button>
+          </div>
+
+          <!-- Artículos -->
+          <div class="admin-panel-content" id="admin-articulos" hidden>
+            <div class="admin-stats">
+              <div class="stat-card"><span class="stat-value" id="stat-arts">0</span><span class="stat-label">Artículos</span></div>
+              <div class="stat-card"><span class="stat-value" id="stat-repos">0</span><span class="stat-label">Proyectos</span></div>
+              <div class="stat-card"><span class="stat-value" id="stat-progs">0</span><span class="stat-label">Programas</span></div>
+            </div>
+            <div class="admin-table-wrapper">
+              <table class="admin-table">
+                <thead><tr><th>Título</th><th>Autor(es)</th><th>Programa</th><th>Estado</th></tr></thead>
+                <tbody id="adm-articles-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Convocatorias -->
+          <div class="admin-panel-content" id="admin-convocatorias" hidden>
+            <div class="admin-form-grid">
+              <div class="form-group form-group--full"><label>Texto de convocatoria</label><textarea id="adm-convocatoria" rows="4">Invitamos a estudiantes de maestría (PNFA) y pregrado (PNF) de la UPTA a enviar sus artículos científicos y resúmenes de proyectos de grado para el Vol. 1, N.° 2 (julio–diciembre 2026).</textarea></div>
+              <div class="form-group"><label>Fecha límite</label><input type="date" id="adm-fecha-limite"></div>
+              <div class="form-group"><label>Estado</label><select id="adm-conv-estado"><option value="abierta">Abierta</option><option value="cerrada">Cerrada</option><option value="próxima">Próxima</option></select></div>
+            </div>
+          </div>
+
+          <div class="admin-actions">
+            <button class="btn btn-primary" id="adm-export">Exportar configuración JSON</button>
+            <button class="btn btn-secondary" id="adm-export-articles">Exportar artículos JSON</button>
+          </div>
+        </div>
+
+        <!-- ===== PANEL: EVALUADOR ===== -->
+        <div class="portal-panel" id="panel-evaluador" hidden>
+          <div class="panel-header">
+            <button class="panel-back" data-back aria-label="Volver a perfiles">&larr; Volver</button>
+            <h2>Registro y panel de evaluador</h2>
+            <p>Regístrese como árbitro evaluador o acceda al panel de evaluaciones asignadas.</p>
+          </div>
+
+          <div class="evaluador-tabs" role="tablist">
+            <button class="eval-tab active" data-evaltab="eval-registro">Registro</button>
+            <button class="eval-tab" data-evaltab="eval-panel">Panel de evaluaciones</button>
+          </div>
+
+          <div id="eval-registro" class="eval-content">
+            <form class="portal-form" id="form-evaluador" novalidate>
+              <div class="form-row"><div class="form-group"><label for="ev-nombres">Nombres y apellidos *</label><input type="text" id="ev-nombres" required></div><div class="form-group"><label for="ev-cedula">Cédula o documento *</label><input type="text" id="ev-cedula" required></div></div>
+              <div class="form-row"><div class="form-group"><label for="ev-correo">Correo electrónico *</label><input type="email" id="ev-correo" required></div><div class="form-group"><label for="ev-telefono">Teléfono</label><input type="tel" id="ev-telefono"></div></div>
+              <div class="form-row"><div class="form-group"><label for="ev-area">  Área de experticia *</label><input type="text" id="ev-area" required placeholder="Ej: Automatización, Electrónica..."></div><div class="form-group"><label for="ev-linea">Línea de investigación *</label><input type="text" id="ev-linea" required></div></div>
+              <div class="form-row"><div class="form-group"><label for="ev-institucion">Institución *</label><input type="text" id="ev-institucion" required value="UPTA"></div><div class="form-group"><label for="ev-nivel">Nivel académico *</label><select id="ev-nivel" required><option value="">Seleccione</option><option>Especialista</option><option>Magíster</option><option>Doctor(a)</option><option>Postdoctor(a)</option></select></div></div>
+              <div class="form-row"><div class="form-group"><label for="ev-experiencia">Experiencia como árbitro</label><select id="ev-experiencia"><option value="">Seleccione</option><option>Sin experiencia previa</option><option>1–3 evaluaciones</option><option>4–10 evaluaciones</option><option>Más de 10 evaluaciones</option></select></div><div class="form-group"><label for="ev-disponibilidad">Disponibilidad</label><select id="ev-disponibilidad"><option value="">Seleccione</option><option>Inmediata</option><option>En 2 semanas</option><option>En 1 mes</option><option>Solo por convocatoria</option></select></div></div>
+              <button type="submit" class="btn btn-primary btn-submit">Registrar como evaluador</button>
+              <div class="form-note"><p><strong>Nota:</strong> Este registro es demostrativo. Los datos ingresados no se almacenan en ningún servidor.</p></div>
+            </form>
+          </div>
+
+          <div id="eval-panel" class="eval-content" hidden>
+            <div class="eval-panel-demo">
+              <h3>Evaluaciones asignadas</h3>
+              <div class="eval-table-wrapper">
+                <table class="admin-table">
+                  <thead><tr><th>Trabajo</th><th>Tipo</th><th>Fecha asignación</th><th>Estado</th><th>Acción</th></tr></thead>
+                  <tbody>
+                    <tr><td>Diseño de un sistema SCADA para monitoreo de procesos industriales</td><td>Artículo</td><td>15/03/2026</td><td><span class="status-badge status--pendiente">Pendiente</span></td><td><button class="btn btn-sm btn-primary" data-eval-action="dictamen">Emitir dictamen</button></td></tr>
+                    <tr><td>Implementación de microservicios con Node.js para sistemas académicos</td><td>Artículo</td><td>10/03/2026</td><td><span class="status-badge status--revision">En revisión</span></td><td><button class="btn btn-sm btn-secondary" data-eval-action="dictamen">Ver dictamen</button></td></tr>
+                    <tr><td>Análisis de eficiencia energética en transformadores de distribución</td><td>Proyecto</td><td>01/03/2026</td><td><span class="status-badge status--aprobado">Evaluado</span></td><td><button class="btn btn-sm btn-secondary" disabled>Completado</button></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="form-note" style="margin-top:var(--space-4)"><strong>Nota:</strong> Este panel es demostrativo con datos de ejemplo. En una implementación real, los trabajos serían asignados por el comité editorial.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== PANEL: ESTUDIANTES ===== -->
+        <div class="portal-panel" id="panel-estudiante" hidden>
+          <div class="panel-header">
+            <button class="panel-back" data-back aria-label="Volver a perfiles">&larr; Volver</button>
+            <h2>Registro y panel de estudiantes</h2>
+            <p>Regístrese como estudiante de pregrado o postgrado y gestione sus envíos.</p>
+          </div>
+
+          <div class="evaluador-tabs" role="tablist">
+            <button class="est-tab active" data-esttab="est-registro">Registro</button>
+            <button class="est-tab" data-esttab="est-panel">Panel de envíos</button>
+          </div>
+
+          <div id="est-registro" class="est-content">
+            <form class="portal-form" id="form-estudiante" novalidate>
+              <div class="form-group">
+                <label for="est-tipo">Tipo de estudiante *</label>
+                <div class="radio-group">
+                  <label class="radio-label"><input type="radio" name="est-tipo" value="Pregrado" checked> Pregrado (PNF)</label>
+                  <label class="radio-label"><input type="radio" name="est-tipo" value="Postgrado"> Postgrado (PNFA / Maestría)</label>
+                </div>
+              </div>
+              <div class="form-row"><div class="form-group"><label for="est-nombres">Nombres y apellidos *</label><input type="text" id="est-nombres" required></div><div class="form-group"><label for="est-cedula">Cédula *</label><input type="text" id="est-cedula" required></div></div>
+              <div class="form-row"><div class="form-group"><label for="est-correo">Correo electrónico *</label><input type="email" id="est-correo" required></div><div class="form-group"><label for="est-telefono">Teléfono</label><input type="tel" id="est-telefono"></div></div>
+              <div class="form-row"><div class="form-group"><label for="est-programa">Programa académico *</label><select id="est-programa" required><option value="">Seleccione un programa</option><optgroup label="Pregrado (PNF)"><option>Instrumentación y Control</option><option>Electricidad</option><option>Electrónica</option><option>Telecomunicaciones</option><option>Mecánica</option><option>Mantenimiento</option><option>Administración</option><option>Contaduría Pública</option><option>Agroalimentación</option></optgroup><optgroup label="Postgrado (PNFA)"><option>Mecánica (PNFA)</option><option>Automatización, Control y Robótica (PNFA)</option><option>Informática mención Desarrollo de Software (PNFA)</option><option>Electricidad (PNFA)</option></optgroup></select></div><div class="form-group"><label for="est-nivel">Nivel / Semestre</label><input type="text" id="est-nivel" placeholder="Ej: 8vo semestre, 2do año"></div></div>
+              <div class="form-group"><label for="est-titulo">Título tentativo del trabajo</label><input type="text" id="est-titulo" placeholder="Título de su artículo o proyecto de grado"></div>
+              <div class="form-group"><label for="est-tutor">Tutor académico</label><input type="text" id="est-tutor" placeholder="Nombre completo del tutor"></div>
+              <button type="submit" class="btn btn-primary btn-submit">Registrar estudiante</button>
+              <div class="form-note"><p><strong>Nota:</strong> Este registro es demostrativo. Los datos ingresados no se almacenan en ningún servidor.</p></div>
+            </form>
+          </div>
+
+          <div id="est-panel" class="est-content" hidden>
+            <div class="est-panel-demo">
+              <div class="est-panel-actions">
+                <button class="btn btn-primary" id="est-nuevo-envio">+ Nuevo envío</button>
+              </div>
+              <h3>Historial de envíos</h3>
+              <div class="eval-table-wrapper">
+                <table class="admin-table">
+                  <thead><tr><th>Título</th><th>Tipo</th><th>Fecha envío</th><th>Estado</th><th>Observaciones</th></tr></thead>
+                  <tbody>
+                    <tr><td>Prototipo de sistema IoT para riego automatizado en cultivos urbanos</td><td>Proyecto de grado</td><td>20/02/2026</td><td><span class="status-badge status--revision">En revisión</span></td><td>Pendiente de evaluación por árbitros</td></tr>
+                    <tr><td>Análisis comparativo de frameworks JavaScript para aplicaciones académicas</td><td>Artículo</td><td>05/01/2026</td><td><span class="status-badge status--correcciones">Correcciones</span></td><td>Ajustar metodología según observaciones del evaluador</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="form-note" style="margin-top:var(--space-4)"><strong>Nota:</strong> Panel demostrativo con datos de ejemplo. En producción, los envíos se gestionarían a través del sistema editorial.</p>
+            </div>
+
+            <!-- Inline new submission form -->
+            <div id="est-envio-form-wrapper" hidden>
+              <h3 style="margin-top:var(--space-8);margin-bottom:var(--space-4)">Nuevo envío</h3>
+              <form class="portal-form" id="form-est-envio" novalidate>
+                <div class="form-group"><label for="envio-titulo">Título del trabajo *</label><input type="text" id="envio-titulo" required></div>
+                <div class="form-row"><div class="form-group"><label for="envio-tipo">Tipo *</label><select id="envio-tipo" required><option value="">Seleccione</option><option>Artículo científico</option><option>Proyecto de grado</option></select></div><div class="form-group"><label for="envio-archivo">Archivo (.md, .docx, .odt, .pdf)</label><input type="file" id="envio-archivo" accept=".md,.docx,.odt,.pdf"></div></div>
+                <div class="form-group"><label for="envio-resumen">Resumen *</label><textarea id="envio-resumen" rows="4" required placeholder="Resumen de su trabajo (150–300 palabras)"></textarea></div>
+                <div class="form-group"><label for="envio-palabras">Palabras clave *</label><input type="text" id="envio-palabras" required placeholder="3 a 5, separadas por coma"></div>
+                <button type="submit" class="btn btn-primary btn-submit">Enviar trabajo</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== PANEL: PÚBLICO GENERAL ===== -->
+        <div class="portal-panel" id="panel-publico" hidden>
+          <div class="panel-header">
+            <button class="panel-back" data-back aria-label="Volver a perfiles">&larr; Volver</button>
+            <h2>Suscripción — Público general</h2>
+            <p>Suscríbase para recibir las ediciones digitales de Saberes Politécnicos y avisos de nuevas publicaciones directamente en su correo electrónico.</p>
+          </div>
+
+          <div class="publico-content">
+            <form class="portal-form portal-form--narrow" id="form-publico" novalidate>
+              <div class="form-group"><label for="pub-nombre">Nombre completo *</label><input type="text" id="pub-nombre" required></div>
+              <div class="form-group"><label for="pub-correo">Correo electrónico *</label><input type="email" id="pub-correo" required placeholder="Su correo para recibir la revista"></div>
+              <div class="form-group"><label for="pub-institucion">Institución (opcional)</label><input type="text" id="pub-institucion" placeholder="Universidad, empresa u organización"></div>
+              <div class="form-group"><label for="pub-area">Área de interés</label><select id="pub-area"><option value="">Seleccione (opcional)</option><option>Ingeniería y Tecnología</option><option>Administración y Contaduría</option><option>Ciencias Aplicadas</option><option>Agroalimentación</option><option>Educación</option><option>Otra</option></select></div>
+              <div class="form-group form-check"><input type="checkbox" id="pub-acepta" required><label for="pub-acepta">Acepto recibir correos con las ediciones digitales y avisos de Saberes Politécnicos.</label></div>
+              <button type="submit" class="btn btn-primary btn-submit">Suscribirse</button>
+              <div class="form-note"><p><strong>Nota:</strong> Esta suscripción es demostrativa. Para activarla en producción, integre un servicio de correo (Mailchimp, Sendinblue, etc.) o configure el correo institucional.</p></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- =================== ARTICLE DETAIL MODAL =================== -->
     <div class="modal-overlay" id="article-modal" hidden>
       <div class="modal" role="dialog" aria-modal="true">
@@ -698,6 +953,7 @@
             <li><a href="#repositorio">Repositorio de proyectos</a></li>
             <li><a href="#normas">Normas para autores</a></li>
             <li><a href="#envios">Envío de trabajos</a></li>
+            <li><a href="#portal">Portal institucional</a></li>
           </ul>
         </div>
         <div class="footer-links">

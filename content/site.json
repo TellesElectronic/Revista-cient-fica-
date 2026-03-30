@@ -2,6 +2,7 @@
   "nombre_revista": "Saberes Politécnicos",
   "subtitulo": "Revista Científica Digital",
   "institucion": "Universidad Politécnica Territorial del Estado Aragua (UPTA)",
+  "nombre_corto_institucion": "UPT Aragua — Federico Brito Figueroa",
   "url_institucion": "https://www.upta.edu.ve",
   "deposito_legal": "AR2026000105",
   "issn": "En trámite",
@@ -16,6 +17,31 @@
   "vision": "Ser un referente editorial digital en el ámbito de las universidades politécnicas territoriales de Venezuela, reconocido por la calidad, rigurosidad y accesibilidad de sus publicaciones.",
   "politica_editorial": "Saberes Politécnicos se concibe como una revista científica digital de acceso abierto, con evaluación académica y buenas prácticas de ética editorial. La modalidad de arbitraje, lineamientos finales y condiciones de publicación deben ser aprobados formalmente por el comité editorial.",
   "politica_etica": "La revista se adhiere a los principios de integridad académica: originalidad, autoría responsable, transparencia en los métodos, tratamiento ético de datos y sujetos de investigación, y declaración de conflictos de interés. El plagio, la fabricación de datos y la publicación duplicada son causales de rechazo.",
+  "portal_institucional": {
+    "descripcion": "Sistema de acceso y registro con 4 perfiles diferenciados: Administrador, Evaluador, Estudiantes y Público general.",
+    "perfiles": [
+      {
+        "id": "admin",
+        "nombre": "Administrador",
+        "descripcion": "Panel de gestión editorial con edición de datos, comité, artículos, convocatorias y exportación JSON."
+      },
+      {
+        "id": "evaluador",
+        "nombre": "Evaluador",
+        "descripcion": "Registro de árbitros evaluadores y panel de evaluaciones asignadas con emisión de dictámenes."
+      },
+      {
+        "id": "estudiante",
+        "nombre": "Estudiantes",
+        "descripcion": "Registro de pregrado y postgrado, envío de artículos/proyectos y seguimiento de estado."
+      },
+      {
+        "id": "publico",
+        "nombre": "Público general",
+        "descripcion": "Suscripción por correo electrónico para recibir ediciones digitales y avisos."
+      }
+    ]
+  },
   "comite_editorial": [
     {
       "cargo": "Director(a) editorial",

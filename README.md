@@ -1,156 +1,107 @@
-# Saberes Politécnicos — Guía de administración
+# Saberes Politécnicos — Revista Científica Digital
+
+**Portal web institucional** de la revista científica digital de acceso abierto, asociada a la **Universidad Politécnica Territorial del Estado Aragua (UPTA)** — Federico Brito Figueroa.
 
 ## Descripción
 
-**Saberes Politécnicos** es un sitio web estático para una revista científica digital de acceso abierto, asociada a la Universidad Politécnica Territorial del Estado Aragua (UPTA). No requiere servidor ni base de datos: todo el contenido se gestiona editando archivos JSON y se publica como archivos estáticos.
+Saberes Politécnicos es una publicación semestral orientada a la divulgación de artículos de investigación (maestría PNFA) y proyectos de grado (pregrado PNF) en áreas de ingeniería, tecnología, administración y ciencias aplicadas.
 
-**Depósito Legal:** AR2026000105
+**Depósito Legal:** AR2026000105  
 **ISSN:** En trámite
 
----
+## Estructura del sitio
 
-## Estructura del proyecto
+El sitio es una **web estática** (HTML + CSS + JS) compatible con despliegue en **Vercel** u otro hosting estático.
+
+### Secciones principales
+
+| Sección | Descripción |
+|---|---|
+| **Inicio** | Hero institucional con logo UPT, convocatoria abierta, artículos recientes |
+| **Artículos** | Listado de artículos científicos con búsqueda y filtros por programa |
+| **Repositorio** | Proyectos de grado de pregrado con búsqueda y filtros |
+| **Sobre la revista** | Presentación, misión, visión, alcance, política editorial |
+| **Normas** | Guía completa para autores (estructura, formato, flujo editorial) |
+| **Envíos** | Formularios de envío de artículos y proyectos de grado |
+| **Comité** | Equipo editorial |
+| **Portal institucional** | Sistema de acceso y registro por perfiles (ver abajo) |
+| **Contacto** | Información de contacto y formulario |
+
+### Portal institucional (nuevo)
+
+El portal ofrece 4 perfiles diferenciados:
+
+1. **Administrador** — Dashboard con edición de configuración general, comité editorial, artículos y convocatorias. Permite exportar datos como JSON para actualizar los archivos del sitio.
+
+2. **Evaluador** — Registro de árbitros evaluadores con campos profesionales completos. Panel demostrativo de evaluaciones asignadas con emisión de dictámenes.
+
+3. **Estudiantes** — Registro de pregrado (PNF) y postgrado (PNFA). Panel de envíos con historial, estado y formulario de nuevo envío.
+
+4. **Público general** — Suscripción por correo electrónico para recibir ediciones digitales y avisos de la revista.
+
+> **Nota:** El portal es demostrativo en frontend. No utiliza backend ni localStorage. Los datos editados en el panel de administración se pueden exportar como JSON.
+
+## Archivos
 
 ```
-saberes-politecnicos-site/
-├── index.html                     ← Página principal (toda la navegación)
-├── styles.css                     ← Estilos del sitio
-├── script.js                      ← Lógica de navegación, búsqueda, filtros
-├── sitemap.xml                    ← Mapa del sitio para buscadores
-├── README.md                      ← Esta guía
-├── content/                       ← CONTENIDO EDITABLE
-│   ├── articles.json              ← Artículos científicos
-│   ├── repository.json            ← Proyectos de grado
-│   └── site.json                  ← Datos generales de la revista
-└── templates/                     ← Plantillas descargables
-    ├── plantilla-articulo-cientifico.md
-    └── plantilla-repositorio-proyecto.md
+├── index.html                  # Página principal (SPA con hash routing)
+├── styles.css                  # Estilos completos (light/dark mode)
+├── script.js                   # Lógica: navegación, datos, portal, forms
+├── assets/
+│   └── logo-upt.jpg            # Logo institucional UPT
+├── content/
+│   ├── site.json               # Configuración de la revista
+│   ├── articles.json           # Artículos científicos
+│   └── repository.json         # Proyectos de grado
+├── templates/
+│   ├── plantilla-articulo-cientifico.md
+│   └── plantilla-repositorio-proyecto.md
+├── favicon.svg
+├── sitemap.xml
+├── vercel.json
+└── README.md
 ```
 
----
+## Despliegue
 
-## Cómo editar el contenido
+### Vercel (recomendado)
 
-### Agregar un artículo científico
+1. Conecte el repositorio a Vercel
+2. Framework preset: **Other**
+3. Build command: (vacío — no requiere build)
+4. Output directory: `.`
+5. Desplegar
 
-1. Abra el archivo `content/articles.json` con un editor de texto (VS Code, Notepad++, Gedit, etc.).
-2. Copie un bloque existente y péguelo al final de la lista (antes del `]` de cierre).
-3. Modifique los campos:
+### Otros hosting estáticos
 
-```json
-{
-  "id": "art-005",
-  "titulo": "Título del nuevo artículo",
-  "autores": ["Apellidos, Nombres"],
-  "programa": "Nombre del PNFA",
-  "resumen": "Texto del resumen...",
-  "palabras_clave": ["palabra1", "palabra2", "palabra3"],
-  "fecha": "2026-06-15",
-  "volumen": "1",
-  "numero": "2",
-  "estado": "Publicado",
-  "doi": "",
-  "seccion": "Artículo de investigación"
-}
-```
+Suba todos los archivos tal como están. No requiere procesamiento ni compilación.
 
-4. Guarde el archivo. El cambio será visible al recargar el sitio.
+## Personalización
 
-**Importante:**
-- El `id` debe ser único (use `art-` seguido de un número consecutivo).
-- La `fecha` debe estar en formato `AAAA-MM-DD`.
-- El `programa` debe coincidir con uno de los programas PNFA: Mecánica, Automatización, Control y Robótica, Informática mención Desarrollo de Software, Electricidad.
+### Datos de la revista
 
-### Agregar un proyecto al repositorio
+Edite los archivos JSON en `content/`:
+- `site.json` — nombre, institución, comité editorial, programas
+- `articles.json` — artículos científicos
+- `repository.json` — proyectos de grado
 
-1. Abra `content/repository.json`.
-2. Copie un bloque existente y modifique:
+También puede usar el **Panel de administración** del portal para editar y exportar la configuración como JSON.
 
-```json
-{
-  "id": "repo-007",
-  "titulo": "Título del proyecto",
-  "autores": ["Apellidos, Nombres"],
-  "programa": "Nombre del PNF",
-  "nivel": "Pregrado (PNF)",
-  "tutor": "Prof. Nombre Completo",
-  "anio": 2026,
-  "resumen": "Texto del resumen...",
-  "palabras_clave": ["palabra1", "palabra2"]
-}
-```
+### Identidad visual
 
-3. Guarde el archivo.
+- Logo: reemplace `assets/logo-upt.jpg` con el logo institucional actualizado
+- Colores: modifique las variables CSS en `:root` y `[data-theme="dark"]` en `styles.css`
+- Tipografía: Instrument Serif (display) + Source Sans 3 (body), cargadas desde Google Fonts
 
-**Programas PNF válidos:** Instrumentación y Control, Electricidad, Electrónica, Telecomunicaciones, Mecánica, Mantenimiento, Administración, Contaduría Pública, Agroalimentación.
+### Correo institucional
 
-### Editar datos generales
+Busque `[correo institucional por definir]` en `content/site.json` e `index.html` para configurar el correo de contacto oficial.
 
-Abra `content/site.json` para modificar:
-- Nombre de la revista, descripción, misión, visión
-- Miembros del comité editorial
-- Políticas editoriales y de ética
-- Correo de contacto
-- Volumen y número actual
+## Recomendación editorial
 
-### Editar el comité editorial
+Para una gestión editorial completa a largo plazo, se recomienda la adopción de **[Open Journal Systems (OJS)](https://pkp.sfu.ca/software/ojs/)**, software libre del Public Knowledge Project (PKP).
 
-En `content/site.json`, busque la sección `"comite_editorial"` y modifique los nombres:
+## Licencia
 
-```json
-{
-  "cargo": "Director(a) editorial",
-  "nombre": "Prof. Nombre Real Aquí",
-  "afiliacion": "UPTA"
-}
-```
-
----
-
-## Cómo publicar cambios
-
-### Opción 1: Servidor web simple
-
-Copie toda la carpeta del proyecto al servidor web (Apache, Nginx, etc.) o a un servicio de hosting estático (GitHub Pages, Netlify, Vercel).
-
-### Opción 2: Abrir localmente
-
-Abra `index.html` directamente en un navegador. La búsqueda y los filtros funcionan con archivos locales si el navegador lo permite. Para mejor compatibilidad, use un servidor local:
-
-```bash
-# Con Python 3
-cd saberes-politecnicos-site
-python3 -m http.server 8000
-
-# Abra http://localhost:8000 en el navegador
-```
-
----
-
-## Recomendaciones
-
-### Software libre para gestión editorial
-
-Para gestionar el flujo editorial completo (envíos, arbitraje, edición, publicación), se recomienda adoptar **Open Journal Systems (OJS)**, el software libre más utilizado en el mundo académico para revistas científicas.
-
-- Sitio web: https://pkp.sfu.ca/software/ojs/
-- Documentación: https://docs.pkp.sfu.ca/
-- OJS permite gestionar todo el proceso de forma transparente, con soporte para metadatos, DOI, indexación y acceso abierto.
-
-### Formatos de trabajo
-
-- Las plantillas en `templates/` están en formato Markdown (`.md`).
-- También se aceptan archivos `.docx` y `.odt`.
-- Se recomienda usar **Zotero** o **Mendeley** como gestores de referencias bibliográficas.
-
----
-
-## Soporte técnico
-
-Para dudas sobre la edición del sitio, contacte al equipo de soporte técnico o actualice primero el correo institucional en `content/site.json`.
-
----
-
-*Saberes Politécnicos — Revista Científica Digital*
-*Depósito Legal: AR2026000105*
-*Universidad Politécnica Territorial del Estado Aragua (UPTA)*
+Contenido editorial © 2026 Saberes Politécnicos — UPTA.  
+Código del sitio web disponible para uso institucional.
