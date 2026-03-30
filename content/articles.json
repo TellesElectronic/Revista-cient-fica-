@@ -1,0 +1,58 @@
+[
+  {
+    "id": "art-001",
+    "titulo": "Diseño de un sistema de control PID adaptativo para procesos térmicos industriales",
+    "autores": ["García Mendoza, Rafael E.", "Torrealba Díaz, María A."],
+    "programa": "Automatización, Control y Robótica",
+    "resumen": "Se presenta el diseño e implementación de un controlador PID adaptativo orientado a procesos térmicos en plantas industriales del estado Aragua. El sistema propuesto emplea técnicas de autoajuste basadas en el método de Ziegler-Nichols modificado, con validación experimental en un horno de secado de alimentos. Los resultados muestran una reducción del 32 % en el tiempo de estabilización y una mejora del 18 % en la eficiencia energética respecto al controlador convencional. Se discuten las implicaciones para la automatización de procesos agroindustriales en el contexto venezolano.",
+    "palabras_clave": ["control PID", "autoajuste", "procesos térmicos", "automatización industrial", "eficiencia energética"],
+    "fecha": "2026-01-15",
+    "volumen": "1",
+    "numero": "1",
+    "estado": "Publicado",
+    "doi": "",
+    "seccion": "Artículo de investigación"
+  },
+  {
+    "id": "art-002",
+    "titulo": "Desarrollo de una aplicación web progresiva para la gestión de historiales clínicos en centros de salud comunitarios",
+    "autores": ["Ramírez Ochoa, Luis F."],
+    "programa": "Informática mención Desarrollo de Software",
+    "resumen": "Este artículo describe el desarrollo de una aplicación web progresiva (PWA) para la gestión de historiales clínicos en centros de salud comunitarios del municipio Girardot, estado Aragua. La solución, basada en tecnologías libres (Node.js, PostgreSQL y React), incorpora funcionalidades de trabajo sin conexión y sincronización diferida, adaptándose a las condiciones de conectividad intermitente del contexto local. Las pruebas de usabilidad con personal de salud arrojaron un índice de satisfacción del 87 % y una reducción del 45 % en el tiempo de registro de pacientes.",
+    "palabras_clave": ["PWA", "historiales clínicos", "software libre", "salud comunitaria", "usabilidad"],
+    "fecha": "2026-02-10",
+    "volumen": "1",
+    "numero": "1",
+    "estado": "Publicado",
+    "doi": "",
+    "seccion": "Artículo de investigación"
+  },
+  {
+    "id": "art-003",
+    "titulo": "Análisis de fallas en transformadores de distribución mediante técnicas de termografía infrarroja",
+    "autores": ["Pérez Colmenares, Ana B.", "Suárez Leal, Jorge R."],
+    "programa": "Electricidad",
+    "resumen": "Se realiza un estudio diagnóstico de transformadores de distribución de 15 kVA y 25 kVA en el estado Aragua mediante termografía infrarroja. Se analizaron 48 transformadores en operación, identificando patrones térmicos asociados a fallas incipientes en conexiones, bushings y devanados. Los hallazgos permitieron clasificar el 73 % de los equipos según su nivel de riesgo y proponer un protocolo de mantenimiento predictivo aplicable a empresas de distribución eléctrica en Venezuela.",
+    "palabras_clave": ["transformadores de distribución", "termografía infrarroja", "mantenimiento predictivo", "diagnóstico de fallas", "distribución eléctrica"],
+    "fecha": "2026-03-05",
+    "volumen": "1",
+    "numero": "1",
+    "estado": "Publicado",
+    "doi": "",
+    "seccion": "Artículo de investigación"
+  },
+  {
+    "id": "art-004",
+    "titulo": "Optimización del proceso de mecanizado CNC mediante algoritmos genéticos para piezas de geometría compleja",
+    "autores": ["Martínez Herrera, Carlos A."],
+    "programa": "Mecánica",
+    "resumen": "Este trabajo aborda la optimización de parámetros de corte en operaciones de mecanizado CNC de tres ejes para piezas con geometría compleja. Se implementó un algoritmo genético multiobjetivo que minimiza simultáneamente el tiempo de mecanizado y la rugosidad superficial, sujeto a restricciones de potencia de la máquina y vida útil de la herramienta. Los experimentos, realizados en un centro de mecanizado HAAS VF-2 con aleación de aluminio 6061-T6, demostraron una reducción del 22 % en el tiempo de ciclo y una mejora del 15 % en el acabado superficial respecto a los parámetros recomendados por el fabricante.",
+    "palabras_clave": ["mecanizado CNC", "algoritmos genéticos", "optimización multiobjetivo", "rugosidad superficial", "manufactura avanzada"],
+    "fecha": "2026-03-20",
+    "volumen": "1",
+    "numero": "1",
+    "estado": "Publicado",
+    "doi": "",
+    "seccion": "Artículo de investigación"
+  }
+]

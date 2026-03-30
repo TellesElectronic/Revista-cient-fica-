@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saberes Politécnicos — Revista Científica Digital</title>
+  <meta name="description" content="Saberes Politécnicos: revista científica digital de acceso abierto de la Universidad Politécnica Territorial del Estado Aragua (UPTA). Artículos de investigación y repositorio de proyectos de grado.">
+  <meta name="keywords" content="revista científica, UPTA, Aragua, politécnica, investigación, proyectos de grado, acceso abierto">
+  <meta name="author" content="Saberes Politécnicos">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Saberes Politécnicos — Revista Científica Digital">
+  <meta property="og:description" content="Revista científica digital de acceso abierto. Artículos de investigación y repositorio de proyectos de grado de la UPTA.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_VE">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Periodical",
+    "name": "Saberes Politécnicos",
+    "alternateName": "Saberes Politécnicos — Revista Científica Digital",
+    "description": "Revista científica digital de acceso abierto orientada a la divulgación de artículos de investigación y proyectos de grado del ámbito politécnico.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Universidad Politécnica Territorial del Estado Aragua (UPTA)",
+      "url": "https://www.upta.edu.ve"
+    },
+    "inLanguage": "es",
+    "isAccessibleForFree": true
+  }
+  </script>
+
+  <!-- Favicon SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231B3A4B'/><text x='16' y='22' font-family='serif' font-size='18' font-weight='bold' fill='%23E8DCC8' text-anchor='middle'>SP</text></svg>">
+
+  <!-- Fonts: Instrument Serif (editorial display) + Source Sans 3 (scientific body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- Skip link -->
+  <a href="#main-content" class="sr-only" style="position:absolute;top:0;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:9999;font-size:14px;">Ir al contenido principal</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="#inicio" class="logo-link" aria-label="Saberes Politécnicos — Inicio">
+        <svg class="logo-svg" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Book/pages icon -->
+          <rect x="2" y="6" width="22" height="28" rx="2" stroke="currentColor" stroke-width="1.8" fill="none"/>
+          <line x1="13" y1="6" x2="13" y2="34" stroke="currentColor" stroke-width="1.2"/>
+          <line x1="6" y1="13" x2="10" y2="13" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+          <line x1="6" y1="17" x2="10" y2="17" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+          <line x1="6" y1="21" x2="10" y2="21" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+          <line x1="16" y1="13" x2="20" y2="13" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+          <line x1="16" y1="17" x2="20" y2="17" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+          <line x1="16" y1="21" x2="20" y2="21" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+          <!-- Text -->
+          <text x="30" y="20" font-family="'Instrument Serif', Georgia, serif" font-size="14" font-weight="400" fill="currentColor">Saberes</text>
+          <text x="30" y="33" font-family="'Source Sans 3', sans-serif" font-size="10" font-weight="600" fill="currentColor" letter-spacing="1.5">POLITÉCNICOS</text>
+        </svg>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul class="nav-list" role="list">
+          <li><a href="#inicio" class="nav-link active" data-section="inicio">Inicio</a></li>
+          <li><a href="#articulos" class="nav-link" data-section="articulos">Artículos</a></li>
+          <li><a href="#repositorio" class="nav-link" data-section="repositorio">Repositorio</a></li>
+          <li><a href="#sobre" class="nav-link" data-section="sobre">Sobre la revista</a></li>
+          <li><a href="#normas" class="nav-link" data-section="normas">Normas</a></li>
+          <li><a href="#envios" class="nav-link" data-section="envios">Envíos</a></li>
+          <li><a href="#comite" class="nav-link" data-section="comite">Comité</a></li>
+          <li><a href="#contacto" class="nav-link" data-section="contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button data-theme-toggle aria-label="Cambiar a modo oscuro" class="theme-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main id="main-content">
+
+    <!-- =================== INICIO =================== -->
+    <section class="page-section" id="inicio" data-page="inicio">
+
+      <!-- Hero -->
+      <div class="hero">
+        <div class="hero-inner">
+          <p class="hero-label">Revista Científica Digital · Vol. 1, N.° 1 · 2026</p>
+          <h1 class="hero-title">Saberes<br>Politécnicos</h1>
+          <p class="hero-subtitle">Conocimiento politécnico al alcance de todos. Artículos de investigación de maestría y repositorio de proyectos de grado de pregrado, con acceso abierto y revisión por pares.</p>
+          <div class="hero-actions">
+            <a href="#articulos" class="btn btn-primary">Explorar artículos</a>
+            <a href="#repositorio" class="btn btn-secondary">Repositorio de proyectos</a>
+          </div>
+          <p class="hero-legal">Depósito Legal: AR2026000105 · ISSN: en trámite</p>
+        </div>
+        <div class="hero-decoration" aria-hidden="true">
+          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="180" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+            <circle cx="200" cy="200" r="140" stroke="currentColor" stroke-width="0.5" opacity="0.12"/>
+            <circle cx="200" cy="200" r="100" stroke="currentColor" stroke-width="0.5" opacity="0.09"/>
+            <circle cx="200" cy="200" r="60" stroke="currentColor" stroke-width="0.8" opacity="0.18"/>
+            <line x1="20" y1="200" x2="380" y2="200" stroke="currentColor" stroke-width="0.3" opacity="0.1"/>
+            <line x1="200" y1="20" x2="200" y2="380" stroke="currentColor" stroke-width="0.3" opacity="0.1"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Quick features -->
+      <div class="features-strip">
+        <div class="container">
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              </div>
+              <h3>Acceso abierto</h3>
+              <p>Contenido digital de acceso abierto, concebido para difusión académica y consulta pública.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </div>
+              <h3>Revisión por pares</h3>
+              <p>Proceso editorial orientado a evaluación académica, rigor metodológico y mejora continua.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+              </div>
+              <h3>Enfoque politécnico</h3>
+              <p>Investigación aplicada en ingeniería, tecnología, administración y ciencias del entorno UPTA.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              </div>
+              <h3>Formato digital</h3>
+              <p>Publicación nativa digital con navegación sencilla, búsqueda integrada y lectura en cualquier dispositivo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Convocatoria -->
+      <div class="convocatoria-section">
+        <div class="container">
+          <div class="convocatoria-card">
+            <div class="convocatoria-content">
+              <h2>Convocatoria abierta</h2>
+              <p>Invitamos a estudiantes de maestría (PNFA) y pregrado (PNF) de la UPTA a enviar sus artículos científicos y resúmenes de proyectos de grado para el <strong>Vol. 1, N.° 2 (julio–diciembre 2026)</strong>.</p>
+              <p>Fecha de recepción del próximo número: <strong>por anunciar por el comité editorial</strong>.</p>
+              <div class="convocatoria-actions">
+                <a href="#normas" class="btn btn-primary">Ver normas para autores</a>
+                <a href="#envios" class="btn btn-secondary">Enviar trabajo</a>
+              </div>
+            </div>
+            <div class="convocatoria-areas">
+              <h3>Áreas temáticas</h3>
+              <div class="areas-columns">
+                <div>
+                  <h4>Artículos (Maestría PNFA)</h4>
+                  <ul>
+                    <li>Mecánica</li>
+                    <li>Automatización, Control y Robótica</li>
+                    <li>Informática — Desarrollo de Software</li>
+                    <li>Electricidad</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Repositorio (Pregrado PNF)</h4>
+                  <ul>
+                    <li>Instrumentación y Control</li>
+                    <li>Electricidad · Electrónica</li>
+                    <li>Telecomunicaciones · Mecánica</li>
+                    <li>Mantenimiento · Administración</li>
+                    <li>Contaduría Pública</li>
+                    <li>Agroalimentación</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Latest articles preview -->
+      <div class="section-preview">
+        <div class="container">
+          <div class="section-header">
+            <h2>Últimos artículos publicados</h2>
+            <a href="#articulos" class="link-arrow">Ver todos los artículos →</a>
+          </div>
+          <div id="home-articles-preview" class="articles-grid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- =================== ARTÍCULOS =================== -->
+    <section class="page-section" id="articulos" data-page="articulos" hidden>
+      <div class="container">
+        <div class="page-header">
+          <h1>Artículos científicos</h1>
+          <p>Investigaciones originales de estudiantes de maestría en los Programas Nacionales de Formación Avanzada (PNFA) de la UPTA.</p>
+        </div>
+
+        <!-- Search & filter bar -->
+        <div class="filter-bar">
+          <div class="search-wrapper">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input type="search" id="articles-search" placeholder="Buscar por título, autor o palabra clave…" class="search-input" aria-label="Buscar artículos">
+          </div>
+          <div class="filter-chips" id="articles-filters" role="group" aria-label="Filtrar por programa">
+            <button class="chip active" data-filter="all">Todos</button>
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <div id="articles-list" class="articles-grid">
+          <!-- Populated by JS -->
+        </div>
+        <p id="articles-empty" class="empty-state" hidden>No se encontraron artículos que coincidan con la búsqueda.</p>
+      </div>
+    </section>
+
+    <!-- =================== REPOSITORIO =================== -->
+    <section class="page-section" id="repositorio" data-page="repositorio" hidden>
+      <div class="container">
+        <div class="page-header">
+          <h1>Repositorio de proyectos de grado</h1>
+          <p>Resúmenes de trabajos de grado de pregrado en los Programas Nacionales de Formación (PNF) de la UPTA.</p>
+        </div>
+
+        <div class="filter-bar">
+          <div class="search-wrapper">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input type="search" id="repo-search" placeholder="Buscar por título, autor, programa o palabra clave…" class="search-input" aria-label="Buscar proyectos">
+          </div>
+          <div class="filter-chips" id="repo-filters" role="group" aria-label="Filtrar por programa">
+            <button class="chip active" data-filter="all">Todos</button>
+          </div>
+        </div>
+
+        <div id="repo-list" class="repo-grid">
+          <!-- Populated by JS -->
+        </div>
+        <p id="repo-empty" class="empty-state" hidden>No se encontraron proyectos que coincidan con la búsqueda.</p>
+      </div>
+    </section>
+
+    <!-- =================== SOBRE LA REVISTA =================== -->
+    <section class="page-section" id="sobre" data-page="sobre" hidden>
+      <div class="container content-narrow">
+        <div class="page-header">
+          <h1>Sobre la revista</h1>
+        </div>
+
+        <div class="prose">
+          <h2>Presentación</h2>
+          <p><strong>Saberes Politécnicos</strong> es una revista científica digital de acceso abierto, orientada a la divulgación de artículos de investigación y proyectos de grado del ámbito politécnico. Está asociada a la <strong>Universidad Politécnica Territorial del Estado Aragua (UPTA)</strong> y busca promover la producción intelectual de estudiantes de maestría y pregrado en las áreas de ingeniería, tecnología, administración y ciencias aplicadas.</p>
+
+          <div class="info-box">
+            <div class="info-row"><span class="info-label">Periodicidad</span><span>Semestral</span></div>
+            <div class="info-row"><span class="info-label">Idioma</span><span>Español</span></div>
+            <div class="info-row"><span class="info-label">Depósito Legal</span><span>AR2026000105</span></div>
+            <div class="info-row"><span class="info-label">ISSN</span><span>En trámite</span></div>
+            <div class="info-row"><span class="info-label">Formato</span><span>Digital (acceso abierto)</span></div>
+            <div class="info-row"><span class="info-label">Institución</span><span>UPTA — Aragua, Venezuela</span></div>
+          </div>
+
+          <h2>Misión</h2>
+          <p>Fomentar la producción y difusión del conocimiento científico y tecnológico generado en el entorno académico politécnico, con énfasis en la pertinencia social, la innovación y la vinculación con las comunidades.</p>
+
+          <h2>Visión</h2>
+          <p>Ser un referente editorial digital en el ámbito de las universidades politécnicas territoriales de Venezuela, reconocido por la calidad, rigurosidad y accesibilidad de sus publicaciones.</p>
+
+          <h2>Alcance académico</h2>
+          <h3>Artículos científicos (Maestría — PNFA)</h3>
+          <ul>
+            <li>Mecánica</li>
+            <li>Automatización, Control y Robótica</li>
+            <li>Informática mención Desarrollo de Software</li>
+            <li>Electricidad</li>
+          </ul>
+
+          <h3>Repositorio de proyectos (Pregrado — PNF)</h3>
+          <ul>
+            <li>Instrumentación y Control</li>
+            <li>Electricidad</li>
+            <li>Electrónica</li>
+            <li>Telecomunicaciones</li>
+            <li>Mecánica</li>
+            <li>Mantenimiento</li>
+            <li>Administración</li>
+            <li>Contaduría Pública</li>
+            <li>Agroalimentación</li>
+          </ul>
+
+          <h2>Política editorial</h2>
+          <p>Saberes Politécnicos se presenta como una propuesta de revista científica digital de acceso abierto, orientada a la evaluación académica, la ética editorial y la difusión del conocimiento politécnico. La política editorial definitiva debe ser aprobada formalmente por su comité editorial.</p>
+
+          <h2>Política de ética</h2>
+          <p>La revista se adhiere a los principios de integridad académica: originalidad, autoría responsable, transparencia en los métodos, tratamiento ético de datos y sujetos de investigación, y declaración de conflictos de interés. El plagio, la fabricación de datos y la publicación duplicada son causales de rechazo.</p>
+
+          <h2>Software libre recomendado</h2>
+          <p>Para la gestión editorial a largo plazo, Saberes Politécnicos recomienda la adopción de <strong><a href="https://pkp.sfu.ca/software/ojs/" target="_blank" rel="noopener noreferrer">Open Journal Systems (OJS)</a></strong>, el software libre de gestión editorial más utilizado en el mundo académico. OJS, desarrollado por el Public Knowledge Project (PKP), permite gestionar todo el flujo editorial (envío, arbitraje, edición, publicación) de forma transparente, con soporte para metadatos, indexación y acceso abierto.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== NORMAS PARA AUTORES =================== -->
+    <section class="page-section" id="normas" data-page="normas" hidden>
+      <div class="container content-narrow">
+        <div class="page-header">
+          <h1>Normas para autores</h1>
+          <p>Guía completa para la preparación y envío de artículos científicos y resúmenes de proyectos de grado.</p>
+        </div>
+
+        <div class="prose">
+          <h2>Estructura del artículo científico</h2>
+          <p>Los artículos enviados a la sección de investigación deben seguir la estructura IMRyD (Introducción, Metodología, Resultados y Discusión):</p>
+
+          <ol class="structured-list">
+            <li><strong>Título:</strong> Claro, conciso y descriptivo. Máximo 20 palabras. En español e inglés.</li>
+            <li><strong>Autor(es):</strong> Nombre completo, afiliación institucional y correo electrónico de correspondencia.</li>
+            <li><strong>Resumen:</strong> Entre 150 y 250 palabras. Debe incluir objetivo, metodología, resultados principales y conclusión.</li>
+            <li><strong>Palabras clave:</strong> De 3 a 5, en español e inglés, ordenadas alfabéticamente.</li>
+            <li><strong>Introducción:</strong> Contexto, antecedentes, justificación y objetivo de la investigación.</li>
+            <li><strong>Marco teórico:</strong> Fundamentos conceptuales y revisión de literatura actualizada.</li>
+            <li><strong>Metodología:</strong> Tipo y diseño de investigación, población, muestra, instrumentos y procedimientos.</li>
+            <li><strong>Resultados:</strong> Presentación objetiva de hallazgos con tablas y figuras.</li>
+            <li><strong>Discusión:</strong> Interpretación de resultados, comparación con estudios previos, limitaciones.</li>
+            <li><strong>Conclusiones:</strong> Síntesis de hallazgos y líneas futuras de investigación.</li>
+            <li><strong>Referencias:</strong> Formato APA 7.ª edición. Mínimo 15 fuentes.</li>
+          </ol>
+
+          <h2>Formato de presentación</h2>
+          <div class="specs-table-wrapper">
+            <table class="specs-table">
+              <thead>
+                <tr><th>Elemento</th><th>Especificación</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Extensión</td><td>4 000 – 8 000 palabras</td></tr>
+                <tr><td>Formato de archivo</td><td>.md, .docx o .odt</td></tr>
+                <tr><td>Interlineado</td><td>1.5</td></tr>
+                <tr><td>Tipografía</td><td>Times New Roman 12 pt o equivalente</td></tr>
+                <tr><td>Márgenes</td><td>2.5 cm en todos los lados</td></tr>
+                <tr><td>Citas y referencias</td><td>APA 7.ª edición</td></tr>
+                <tr><td>Idioma</td><td>Español (con resumen en inglés)</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Estructura del resumen de proyecto de grado</h2>
+          <p>Los trabajos para el repositorio de proyectos deben incluir:</p>
+          <ol class="structured-list">
+            <li><strong>Título del proyecto</strong></li>
+            <li><strong>Autor(es) y cédula de identidad</strong></li>
+            <li><strong>Programa (PNF) y tutor(es)</strong></li>
+            <li><strong>Resumen:</strong> 200 a 300 palabras (problema, objetivo, metodología, resultados, relevancia).</li>
+            <li><strong>Palabras clave:</strong> 3 a 5.</li>
+            <li><strong>Objetivos general y específicos</strong></li>
+            <li><strong>Descripción metodológica breve</strong></li>
+            <li><strong>Principales resultados o productos</strong></li>
+            <li><strong>Impacto social o técnico</strong></li>
+          </ol>
+
+          <h2>Plantillas descargables</h2>
+          <p>Utilice las siguientes plantillas en formato Markdown como guía para preparar su envío:</p>
+          <div class="download-cards">
+            <a href="./templates/plantilla-articulo-cientifico.md" target="_blank" rel="noopener noreferrer" class="download-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/><path d="M12 11v6m0 0l-2-2m2 2l2-2"/></svg>
+              <div>
+                <strong>Plantilla de artículo científico</strong>
+                <span>plantilla-articulo-cientifico.md</span>
+              </div>
+            </a>
+            <a href="./templates/plantilla-repositorio-proyecto.md" target="_blank" rel="noopener noreferrer" class="download-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/><path d="M12 11v6m0 0l-2-2m2 2l2-2"/></svg>
+              <div>
+                <strong>Plantilla de proyecto de grado</strong>
+                <span>plantilla-repositorio-proyecto.md</span>
+              </div>
+            </a>
+          </div>
+
+          <h2>Flujo editorial</h2>
+          <div class="editorial-flow">
+            <div class="flow-step">
+              <div class="flow-number">1</div>
+              <div class="flow-content">
+                <strong>Recepción</strong>
+                <p>El autor envía su trabajo a través del formulario de envíos o por correo electrónico.</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-number">2</div>
+              <div class="flow-content">
+                <strong>Revisión preliminar</strong>
+                <p>El comité editorial verifica el cumplimiento de las normas de formato y pertinencia temática.</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-number">3</div>
+              <div class="flow-content">
+                <strong>Arbitraje</strong>
+                <p>Evaluación académica por árbitros o revisores designados según el reglamento editorial que adopte la revista.</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-number">4</div>
+              <div class="flow-content">
+                <strong>Correcciones</strong>
+                <p>El autor incorpora las observaciones de los árbitros y reenvía la versión corregida.</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-number">5</div>
+              <div class="flow-content">
+                <strong>Aceptación</strong>
+                <p>El comité editorial aprueba la versión final del artículo.</p>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-number">6</div>
+              <div class="flow-content">
+                <strong>Publicación</strong>
+                <p>El artículo se publica en la edición correspondiente de la revista.</p>
+              </div>
+            </div>
+          </div>
+
+          <h2>Recomendaciones adicionales</h2>
+          <ul>
+            <li>Verifique la originalidad de su trabajo antes de enviarlo.</li>
+            <li>Utilice gestores de referencias como Zotero o Mendeley.</li>
+            <li>Las figuras deben tener resolución mínima de 300 dpi.</li>
+            <li>Declare posibles conflictos de interés.</li>
+            <li>Incluya la aprobación del comité de ética si su investigación involucra sujetos humanos.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== ENVÍOS =================== -->
+    <section class="page-section" id="envios" data-page="envios" hidden>
+      <div class="container content-narrow">
+        <div class="page-header">
+          <h1>Envío de trabajos</h1>
+          <p>Seleccione el tipo de envío y complete el formulario. El correo institucional de recepción puede configurarse fácilmente en la guía de administración.</p>
+        </div>
+
+        <div class="form-tabs" role="tablist">
+          <button class="form-tab active" role="tab" aria-selected="true" data-tab="tab-articulo">Artículo científico</button>
+          <button class="form-tab" role="tab" aria-selected="false" data-tab="tab-repositorio">Proyecto de grado</button>
+        </div>
+
+        <!-- Form: Article -->
+        <form id="tab-articulo" class="submission-form" novalidate>
+          <h2>Envío de artículo científico</h2>
+          <div class="form-group">
+            <label for="art-titulo">Título del artículo *</label>
+            <input type="text" id="art-titulo" required maxlength="200" placeholder="Título claro y descriptivo (máx. 20 palabras)">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="art-autores">Autor(es) *</label>
+              <input type="text" id="art-autores" required placeholder="Apellidos, Nombres (separar con punto y coma)">
+            </div>
+            <div class="form-group">
+              <label for="art-correo">Correo de correspondencia *</label>
+              <input type="email" id="art-correo" required placeholder="correo@ejemplo.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="art-programa">Programa de maestría (PNFA) *</label>
+            <select id="art-programa" required>
+              <option value="">Seleccione un programa</option>
+              <option>Mecánica</option>
+              <option>Automatización, Control y Robótica</option>
+              <option>Informática mención Desarrollo de Software</option>
+              <option>Electricidad</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="art-resumen">Resumen (150–250 palabras) *</label>
+            <textarea id="art-resumen" rows="6" required placeholder="Objetivo, metodología, resultados principales y conclusión."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="art-palabras">Palabras clave *</label>
+            <input type="text" id="art-palabras" required placeholder="3 a 5 palabras clave, separadas por coma">
+          </div>
+          <div class="form-group">
+            <label for="art-archivo">Archivo del artículo (.md, .docx, .odt)</label>
+            <input type="file" id="art-archivo" accept=".md,.docx,.odt,.pdf">
+            <small>En esta versión demostrativa, el archivo no se enviará. Adjúntelo al correo electrónico.</small>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" id="art-declaracion" required>
+            <label for="art-declaracion">Declaro que este trabajo es original, no ha sido publicado previamente ni se encuentra en proceso de evaluación en otra revista.</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit">Enviar artículo</button>
+          <div class="form-note">
+            <p><strong>Nota:</strong> Este formulario es demostrativo. Para operación real, configure el correo institucional de recepción y, de ser posible, implemente <a href="https://pkp.sfu.ca/software/ojs/" target="_blank" rel="noopener noreferrer">OJS</a> para gestionar el flujo editorial completo.</p>
+          </div>
+        </form>
+
+        <!-- Form: Repository -->
+        <form id="tab-repositorio" class="submission-form" hidden novalidate>
+          <h2>Envío al repositorio de proyectos de grado</h2>
+          <div class="form-group">
+            <label for="repo-titulo">Título del proyecto *</label>
+            <input type="text" id="repo-titulo" required maxlength="250" placeholder="Título completo del trabajo de grado">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="repo-autores">Autor(es) *</label>
+              <input type="text" id="repo-autores" required placeholder="Apellidos, Nombres">
+            </div>
+            <div class="form-group">
+              <label for="repo-tutor">Tutor(a) académico(a) *</label>
+              <input type="text" id="repo-tutor" required placeholder="Nombre completo del tutor">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="repo-programa">Programa (PNF) *</label>
+              <select id="repo-programa" required>
+                <option value="">Seleccione un programa</option>
+                <option>Instrumentación y Control</option>
+                <option>Electricidad</option>
+                <option>Electrónica</option>
+                <option>Telecomunicaciones</option>
+                <option>Mecánica</option>
+                <option>Mantenimiento</option>
+                <option>Administración</option>
+                <option>Contaduría Pública</option>
+                <option>Agroalimentación</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="repo-anio">Año de presentación *</label>
+              <input type="number" id="repo-anio" required min="2020" max="2030" placeholder="2026">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="repo-resumen">Resumen del proyecto (200–300 palabras) *</label>
+            <textarea id="repo-resumen" rows="6" required placeholder="Problema, objetivo, metodología, resultados y relevancia del proyecto."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="repo-palabras">Palabras clave *</label>
+            <input type="text" id="repo-palabras" required placeholder="3 a 5 palabras clave, separadas por coma">
+          </div>
+          <div class="form-group">
+            <label for="repo-archivo">Archivo del resumen (.md, .docx, .odt)</label>
+            <input type="file" id="repo-archivo" accept=".md,.docx,.odt,.pdf">
+            <small>En esta versión demostrativa, el archivo no se enviará. Adjúntelo al correo electrónico.</small>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit">Enviar proyecto</button>
+          <div class="form-note">
+            <p><strong>Nota:</strong> Para envíos reales, configure el correo institucional de recepción o integre un sistema editorial abierto para automatizar el registro.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- =================== COMITÉ EDITORIAL =================== -->
+    <section class="page-section" id="comite" data-page="comite" hidden>
+      <div class="container content-narrow">
+        <div class="page-header">
+          <h1>Comité editorial</h1>
+          <p>Equipo responsable de la gestión editorial de Saberes Politécnicos.</p>
+        </div>
+
+        <div id="comite-list" class="comite-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== CONTACTO =================== -->
+    <section class="page-section" id="contacto" data-page="contacto" hidden>
+      <div class="container content-narrow">
+        <div class="page-header">
+          <h1>Contacto</h1>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2>Información de contacto</h2>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <div>
+                <strong>Correo electrónico</strong>
+                <p>Por definir por el comité editorial</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <div>
+                <strong>Institución</strong>
+                <p>Universidad Politécnica Territorial del Estado Aragua (UPTA)</p>
+                <p>Aragua, Venezuela</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+              <div>
+                <strong>Sitio institucional</strong>
+                <p><a href="https://www.upta.edu.ve" target="_blank" rel="noopener noreferrer">www.upta.edu.ve</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <h2>Enviar un mensaje</h2>
+            <form class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contact-nombre">Nombre completo *</label>
+                <input type="text" id="contact-nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-correo">Correo electrónico *</label>
+                <input type="email" id="contact-correo" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-asunto">Asunto *</label>
+                <input type="text" id="contact-asunto" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-mensaje">Mensaje *</label>
+                <textarea id="contact-mensaje" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-submit">Enviar mensaje</button>
+              <div class="form-note">
+                <p>Este formulario es demostrativo. Actualice el correo institucional en la configuración del sitio para habilitar el contacto oficial.</p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== ARTICLE DETAIL MODAL =================== -->
+    <div class="modal-overlay" id="article-modal" hidden>
+      <div class="modal" role="dialog" aria-modal="true">
+        <button class="modal-close" aria-label="Cerrar">&times;</button>
+        <div id="modal-content" class="modal-body">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <svg class="footer-logo" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="6" width="22" height="28" rx="2" stroke="currentColor" stroke-width="1.8" fill="none"/>
+            <line x1="13" y1="6" x2="13" y2="34" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="6" y1="13" x2="10" y2="13" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+            <line x1="6" y1="17" x2="10" y2="17" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+            <line x1="6" y1="21" x2="10" y2="21" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+            <line x1="16" y1="13" x2="20" y2="13" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+            <line x1="16" y1="17" x2="20" y2="17" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+            <line x1="16" y1="21" x2="20" y2="21" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+            <text x="30" y="20" font-family="'Instrument Serif', Georgia, serif" font-size="14" font-weight="400" fill="currentColor">Saberes</text>
+            <text x="30" y="33" font-family="'Source Sans 3', sans-serif" font-size="10" font-weight="600" fill="currentColor" letter-spacing="1.5">POLITÉCNICOS</text>
+          </svg>
+          <p>Revista Científica Digital<br>Depósito Legal: AR2026000105<br>ISSN: en trámite</p>
+        </div>
+        <div class="footer-links">
+          <h4>Secciones</h4>
+          <ul role="list">
+            <li><a href="#articulos">Artículos científicos</a></li>
+            <li><a href="#repositorio">Repositorio de proyectos</a></li>
+            <li><a href="#normas">Normas para autores</a></li>
+            <li><a href="#envios">Envío de trabajos</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Información</h4>
+          <ul role="list">
+            <li><a href="#sobre">Sobre la revista</a></li>
+            <li><a href="#comite">Comité editorial</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="https://pkp.sfu.ca/software/ojs/" target="_blank" rel="noopener noreferrer">OJS (recomendado)</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Institución</h4>
+          <ul role="list">
+            <li><a href="https://www.upta.edu.ve" target="_blank" rel="noopener noreferrer">UPTA — Sitio oficial</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Saberes Politécnicos · <a href="https://www.upta.edu.ve" target="_blank" rel="noopener noreferrer">Universidad Politécnica Territorial del Estado Aragua</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

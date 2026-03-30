@@ -1,0 +1,68 @@
+{
+  "nombre_revista": "Saberes Politécnicos",
+  "subtitulo": "Revista Científica Digital",
+  "institucion": "Universidad Politécnica Territorial del Estado Aragua (UPTA)",
+  "url_institucion": "https://www.upta.edu.ve",
+  "deposito_legal": "AR2026000105",
+  "issn": "En trámite",
+  "volumen_actual": "1",
+  "numero_actual": "1",
+  "anio": "2026",
+  "periodicidad": "Semestral",
+  "idioma": "Español",
+  "correo_contacto": "[correo institucional por definir]",
+  "descripcion": "Saberes Politécnicos es una revista científica digital de acceso abierto, orientada a la divulgación de artículos de investigación y proyectos de grado del ámbito politécnico. Está asociada a la Universidad Politécnica Territorial del Estado Aragua (UPTA) y busca promover la producción intelectual de estudiantes de maestría y pregrado en las áreas de ingeniería, tecnología, administración y ciencias aplicadas.",
+  "mision": "Fomentar la producción y difusión del conocimiento científico y tecnológico generado en el entorno académico politécnico, con énfasis en la pertinencia social, la innovación y la vinculación con las comunidades.",
+  "vision": "Ser un referente editorial digital en el ámbito de las universidades politécnicas territoriales de Venezuela, reconocido por la calidad, rigurosidad y accesibilidad de sus publicaciones.",
+  "politica_editorial": "Saberes Politécnicos se concibe como una revista científica digital de acceso abierto, con evaluación académica y buenas prácticas de ética editorial. La modalidad de arbitraje, lineamientos finales y condiciones de publicación deben ser aprobados formalmente por el comité editorial.",
+  "politica_etica": "La revista se adhiere a los principios de integridad académica: originalidad, autoría responsable, transparencia en los métodos, tratamiento ético de datos y sujetos de investigación, y declaración de conflictos de interés. El plagio, la fabricación de datos y la publicación duplicada son causales de rechazo.",
+  "comite_editorial": [
+    {
+      "cargo": "Director(a) editorial",
+      "nombre": "[Nombre por designar]",
+      "afiliacion": "UPTA"
+    },
+    {
+      "cargo": "Editor(a) jefe",
+      "nombre": "[Nombre por designar]",
+      "afiliacion": "UPTA"
+    },
+    {
+      "cargo": "Editor(a) de sección — Artículos científicos",
+      "nombre": "[Nombre por designar]",
+      "afiliacion": "UPTA"
+    },
+    {
+      "cargo": "Editor(a) de sección — Repositorio de proyectos",
+      "nombre": "[Nombre por designar]",
+      "afiliacion": "UPTA"
+    },
+    {
+      "cargo": "Coordinador(a) de arbitraje",
+      "nombre": "[Nombre por designar]",
+      "afiliacion": "UPTA"
+    },
+    {
+      "cargo": "Diseñador(a) / Soporte técnico",
+      "nombre": "[Nombre por designar]",
+      "afiliacion": "UPTA"
+    }
+  ],
+  "programas_maestria": [
+    "Mecánica",
+    "Automatización, Control y Robótica",
+    "Informática mención Desarrollo de Software",
+    "Electricidad"
+  ],
+  "programas_pregrado": [
+    "Instrumentación y Control",
+    "Electricidad",
+    "Electrónica",
+    "Telecomunicaciones",
+    "Mecánica",
+    "Mantenimiento",
+    "Administración",
+    "Contaduría Pública",
+    "Agroalimentación"
+  ]
+}

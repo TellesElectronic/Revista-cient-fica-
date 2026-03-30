@@ -1,0 +1,68 @@
+[
+  {
+    "id": "repo-001",
+    "titulo": "Sistema de monitoreo de variables ambientales en invernaderos mediante sensores IoT",
+    "autores": ["Méndez Rojas, Daniela C.", "Blanco Figueroa, Andrés J."],
+    "programa": "Instrumentación y Control",
+    "nivel": "Pregrado (PNF)",
+    "tutor": "Prof. Ricardo Gutiérrez",
+    "anio": 2025,
+    "resumen": "Diseño e implementación de un sistema de monitoreo de temperatura, humedad relativa y luminosidad en invernaderos del municipio Zamora, estado Aragua. Se emplearon sensores DHT22 y BH1750 conectados a un microcontrolador ESP32 con transmisión de datos vía protocolo MQTT a un servidor local. El sistema permite visualización en tiempo real mediante un tablero web desarrollado con Grafana.",
+    "palabras_clave": ["IoT", "invernaderos", "monitoreo ambiental", "ESP32", "MQTT"]
+  },
+  {
+    "id": "repo-002",
+    "titulo": "Rediseño del sistema de iluminación del edificio administrativo de la UPTA bajo criterios de eficiencia energética",
+    "autores": ["Castillo Mora, Yuliana P."],
+    "programa": "Electricidad",
+    "nivel": "Pregrado (PNF)",
+    "tutor": "Prof. Marta Elena Díaz",
+    "anio": 2025,
+    "resumen": "Propuesta de rediseño del sistema de iluminación del edificio administrativo central de la UPTA, sustituyendo luminarias fluorescentes por tecnología LED con control de atenuación. Se realizó un levantamiento de carga eléctrica, simulación con DIALux y cálculo de retorno de inversión. La propuesta proyecta un ahorro del 58 % en el consumo eléctrico asociado a iluminación.",
+    "palabras_clave": ["eficiencia energética", "iluminación LED", "DIALux", "ahorro energético"]
+  },
+  {
+    "id": "repo-003",
+    "titulo": "Prototipo de sistema de alarma comunitaria con notificación vía GSM",
+    "autores": ["López Hernández, José M.", "Rivero Navarro, Karla S."],
+    "programa": "Electrónica",
+    "nivel": "Pregrado (PNF)",
+    "tutor": "Prof. Luis Enrique Paredes",
+    "anio": 2024,
+    "resumen": "Desarrollo de un prototipo de alarma comunitaria basado en Arduino Mega, sensores PIR y módulo GSM SIM800L para envío de alertas SMS a miembros de un consejo comunal del municipio Libertador, estado Aragua. El sistema fue validado en condiciones reales durante un período de 30 días con un índice de fiabilidad del 94 %.",
+    "palabras_clave": ["alarma comunitaria", "GSM", "Arduino", "seguridad ciudadana"]
+  },
+  {
+    "id": "repo-004",
+    "titulo": "Diseño de una red FTTH para la urbanización Los Samanes del municipio Girardot",
+    "autores": ["Navarro Díaz, Simón E."],
+    "programa": "Telecomunicaciones",
+    "nivel": "Pregrado (PNF)",
+    "tutor": "Prof. Carmen Lucía Rojas",
+    "anio": 2025,
+    "resumen": "Diseño de una red de fibra óptica hasta el hogar (FTTH) con topología GPON para 320 viviendas de la urbanización Los Samanes. Se realizó el estudio de demanda, diseño de planta externa, selección de equipos y presupuesto de enlace óptico. El proyecto cumple con las recomendaciones ITU-T G.984 y propone una solución escalable para la prestación de servicios triple play.",
+    "palabras_clave": ["FTTH", "GPON", "fibra óptica", "telecomunicaciones", "diseño de red"]
+  },
+  {
+    "id": "repo-005",
+    "titulo": "Plan de mantenimiento preventivo basado en confiabilidad para la flota de autobuses de transporte universitario",
+    "autores": ["Quintero Barrios, Miguel A.", "Arévalo Torres, Paola N."],
+    "programa": "Mantenimiento",
+    "nivel": "Pregrado (PNF)",
+    "tutor": "Prof. Héctor Rodríguez",
+    "anio": 2024,
+    "resumen": "Elaboración de un plan de mantenimiento centrado en confiabilidad (RCM) para la flota de ocho autobuses del servicio de transporte de la UPTA. Se aplicó análisis de modos y efectos de falla (AMEF), se calcularon indicadores de disponibilidad y confiabilidad, y se definieron tareas preventivas programadas. La implementación parcial durante seis meses redujo las paradas no planificadas en un 40 %.",
+    "palabras_clave": ["RCM", "mantenimiento preventivo", "confiabilidad", "AMEF", "transporte"]
+  },
+  {
+    "id": "repo-006",
+    "titulo": "Sistema contable automatizado para cooperativas agrícolas del municipio Zamora",
+    "autores": ["Fernández Briceño, Gabriela M."],
+    "programa": "Contaduría Pública",
+    "nivel": "Pregrado (PNF)",
+    "tutor": "Prof. Alejandra Vivas",
+    "anio": 2025,
+    "resumen": "Desarrollo de un sistema contable basado en hojas de cálculo avanzadas con macros para la gestión financiera de cooperativas agrícolas del municipio Zamora. El sistema permite el registro de ingresos, egresos, inventario de insumos y generación de estados financieros básicos. Fue validado con tres cooperativas, logrando reducir el tiempo de elaboración de informes contables mensuales de cinco días a uno.",
+    "palabras_clave": ["contabilidad", "cooperativas agrícolas", "automatización", "estados financieros"]
+  }
+]

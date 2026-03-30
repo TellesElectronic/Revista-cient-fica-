@@ -154,4 +154,3 @@ Para dudas sobre la edición del sitio, contacte al equipo de soporte técnico o
 *Saberes Politécnicos — Revista Científica Digital*
 *Depósito Legal: AR2026000105*
 *Universidad Politécnica Territorial del Estado Aragua (UPTA)*
-"# Revista-cient-fica-" 
